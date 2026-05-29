@@ -1,0 +1,101 @@
+3
+Almir
+Belma
+Carla
+15
+"Tvrdjava" Almir 150 08:05
+"Ana Karenina" Belma 800 08:15
+"Mali Princ" Carla 100 08:30
+"1984" Almir 328 09:10
+"Proces" Belma 254 09:45
+"Stranac" Carla 185 10:20
+"Zlocin i kazna" Almir 671 11:00
+"Idiot" Belma 578 11:45
+"Braca Karamazovi" Carla 824 12:30
+"Rat i mir" Almir 1225 13:15
+"Don Kihot" Belma 863 14:00
+"Jadnici" Carla 1232 14:45
+"Hamlet" Almir 183 15:30
+"Macbeth" Belma 117 16:15
+"Kralj Lear" Carla 144 17:00
+"Gospodar prstenova" Almir 1137 17:45
+"Hobit" Belma 304 18:30
+"Silmarillion" Carla 482 19:15
+"Harry Potter 1" Almir 309 20:00
+"Harry Potter 2" Belma 341 20:45
+"Harry Potter 3" Carla 435 21:30
+"Harry Potter 4" Almir 734 22:15
+"Harry Potter 5" Belma 870 23:00
+"Harry Potter 6" Carla 607 23:45
+"Harry Potter 7" Almir 759 00:30
+"Alhemicar" Belma 163 01:15
+"Alkemist" Carla 197 02:00
+"Kum" Almir 448 02:45
+"Mracni vitez" Belma 340 03:30
+"Pulp Fiction" Carla 211 04:15
+"Matriks" Almir 188 05:00
+"Casablanca" Belma 134 05:45
+"Citizen Kane" Carla 126 06:30
+"Na Drini cuprija" Almir 279 07:15
+"Travnicka hronika" Belma 423 08:00
+"Dervis i smrt" Carla 289 08:45
+"Znakovi pored puta" Almir 312 09:30
+"Prokleta avlija" Belma 152 10:15
+"Tvrdjava" Carla 150 11:00
+"Koreni" Almir 228 11:45
+"Seobe" Belma 379 12:30
+"Enciklopedija mrtvih" Carla 220 13:15
+"Hazarski recnik" Almir 355 14:00
+"Petar Pan" Belma 176 14:45
+"Alisa u zemlji cuda" Carla 136 15:30
+"Male zene" Almir 449 16:15
+"Gordost i predrasuda" Belma 279 17:00
+"Orkanski visovi" Carla 342 17:45
+"Jane Eyre" Almir 507 18:30
+"Velika ocekivanja" Belma 544 19:15
+"David Copperfield" Carla 882 20:00
+"Oliver Twist" Almir 362 20:45
+"Moja borba" Belma 720 21:30
+"Uliks" Carla 736 22:15
+"Odiseja" Almir 442 23:00
+"Ilijada" Belma 683 23:45
+"Eneida" Carla 434 00:30
+"Metamorfoze" Almir 480 01:15
+"Medeja" Belma 104 02:00
+"Antigona" Carla 68 02:45
+"Okovani Prometej" Almir 76 03:30
+"Orestija" Belma 144 04:15
+"Edip" Carla 136 05:00
+"Elektra" Almir 112 05:45
+"Avanture Toma Sawyera" Belma 224 06:30
+"Avanture Huckleberryja Finna" Carla 366 07:15
+"20000 milja pod morem" Almir 234 08:00
+"Put oko svijeta za 80 dana" Belma 256 08:45
+"Tajanstveno ostrvo" Carla 194 09:30
+"Robinzon Kruso" Almir 304 10:15
+"Gargantua i Pantagruel" Belma 635 11:00
+"Gulliver's Travels" Carla 352 11:45
+"Candide" Almir 102 12:30
+"Otac Goriot" Belma 443 13:15
+"Evgenija Grande" Carla 236 14:00
+"Crveno i crno" Almir 576 14:45
+"Parmski kartuzijanski samostan" Belma 508 15:30
+"Madam Bovary" Carla 368 16:15
+"U traganju za izgubljenim vremenom" Almir 4215 17:00
+"Preobrazaj" Belma 55 17:45
+"Proces" Carla 254 18:30
+"Dvorac" Almir 352 19:15
+"Amerika" Belma 298 20:00
+"Don Juan" Carla 314 20:45
+"Faust" Almir 442 21:30
+"Kreutzerova sonata" Belma 178 22:15
+"Ana Karenjina" Carla 864 23:00
+"Rat i mir" Almir 1225 23:45
+"Zlocin i kazna" Belma 671 00:30
+"Idiot" Carla 578 01:15
+"Junaci na\u0161eg doba" Almir 182 02:00
+"Tihi Don" Belma 1852 02:45
+"Doktor Zivago" Carla 675 03:30
+"Majstor i Margarita" Almir 372 04:15
+"Lolita" Belma 317 05:00
+"Autobiografija" Carla 278 05:45
