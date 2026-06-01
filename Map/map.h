@@ -80,6 +80,10 @@ Map<K, V>::Map(Map&& other) : size_(other.size_), root(other.root){
 template <typename K, typename V>
 Map<K, V>& Map<K, V>::operator=(const Map<K, V>& other){
   if(this == &other){
-    return this;
+    return *this;
   }
+  destroy(root);
+  root = copy(other.root);
+  size_ = other.size_;
+  return *this;
 }
