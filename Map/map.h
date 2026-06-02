@@ -12,8 +12,12 @@ class Map {
     ~Map() {
       destroy(root);
     };
-    bool empty() const;
-    size_t size() const;
+    bool empty() const {
+      return root == nullptr;
+    };
+    size_t size() const {
+      return size_;
+    };
     // Metod baza iznimku ako element sa datim kljucem ne postoji
     V& at(const K&);
     const V& at(const K&) const;
