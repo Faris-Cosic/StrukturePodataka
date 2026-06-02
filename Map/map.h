@@ -106,3 +106,51 @@ Map<K, V>& Map<K, V>::operator=(Map<K, V>&& other){
 
   return *this;
 }
+
+template <typename K, typename V>
+V* Map<K, V>::find(const K& k) {
+  auto& thisNode = root;
+  while(thisNode != nullptr) {
+    if(k > thisNode->key) {
+      thisNode = thisNode->right;
+    }
+    else if(k < thisNode->key) {
+      thisNode = thisNode->left;
+    }
+    else 
+      return &thisNode->value;
+  }
+  return nullptr;
+}
+
+template <typename K, typename V>
+const V* Map<K, V>::find(const K& k) const {
+  auto& thisNode = root;
+  while(thisNode != nullptr) {
+    if(k > thisNode->key) {
+      thisNode = thisNode->right;
+    }
+    else if(k < thisNode->key) {
+      thisNode = thisNode->left;
+    }
+    else 
+      return &thisNode->value;
+  }
+  return nullptr;
+}
+
+template <typename K, typename V>
+V& Map<K, V>::at(const K& k) {
+  auto* foundNode = find(k);
+  if (!foundNode)
+    throw std::out_of_range("Element nije pronadjen");
+  return *foundNode;
+}
+
+template <typename K, typename V>
+const V& Map<K, V>::at(const K& k) const {
+  auto* foundNode = find(k);
+  if (!foundNode)
+    throw std::out_of_range("Element nije pronadjen");
+  return *foundNode;
+}
