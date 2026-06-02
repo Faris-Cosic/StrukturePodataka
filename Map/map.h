@@ -87,3 +87,18 @@ Map<K, V>& Map<K, V>::operator=(const Map<K, V>& other){
   size_ = other.size_;
   return *this;
 }
+
+template <typename K, typename V>
+Map<K, V>& Map<K, V>::operator=(Map<K, V>&& other){
+  if(this == &other){
+    return *this; 
+  }
+  destroy(root);
+  root = other.root;
+  size_ = other.size_;
+
+  other.root = nullptr;
+  other.size_ = 0;
+
+  return *this;
+}
