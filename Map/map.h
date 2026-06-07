@@ -179,4 +179,15 @@ void Map<K, V>::insert(const K& key, F&& value){
   size_++;
 }
 
+template <typename K, typename V>
+V& Map<K, V>::operator[](const K& key){
+  auto foundNode = find(key);
+  if(foundNode)
+    return *foundNode;
+  V value;
+  insert(key, value);
+  return *find(key);
+}
+
+
 
