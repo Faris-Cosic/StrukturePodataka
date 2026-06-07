@@ -154,3 +154,29 @@ const V& Map<K, V>::at(const K& k) const {
     throw std::out_of_range("Element nije pronadjen");
   return *foundNode;
 }
+
+
+template <typename K, typename V>
+template <typename F>
+void Map<K, V>::insert(const K& key, F&& value){
+  if(find(key))
+    throw std::invalid_argument("Element sa tim ključem već postoji");
+  if(!root){
+    root = new node(key, std::forward<F>(value));
+    return;
+  }
+  node* currentNode = root;
+  while(currentNode){
+    auto& childNode = key > currentNode->key ? currentNode->right : currentNode->left;
+    if(!childNode){
+      childNode = new node(key, std::forward<F>(value));
+      break;
+    }
+    else {
+      currentNode = childNode;
+    }
+  }
+  size_++;
+}
+
+
