@@ -43,7 +43,8 @@ class Map {
       V value;
       node *left, *right;
 
-      node(const K& k, const V& v) : key(k), value(v), left(nullptr), right(nullptr) {};
+      template <typename F>
+      node(const K& k, F&& v) : key(k), value(std::forward<F>(v)), left(nullptr), right(nullptr) {};
     };
     size_t size_;
     node* root = nullptr;
@@ -71,9 +72,7 @@ class Map {
 
 template <typename K, typename V>
 Map<K, V>::Map(const Map& other){
-  root = other.root;
-  auto node = root;
-  copy(node);
+  root = copy(other.root);
   size_ = other.size_;
 }
 
@@ -165,8 +164,10 @@ void Map<K, V>::insert(const K& key, F&& value){
     throw std::invalid_argument("Element sa tim ključem već postoji");
   if(!root){
     root = new node(key, std::forward<F>(value));
+    size_++;
     return;
   }
+  size_++;
   node* currentNode = root;
   while(currentNode){
     auto& childNode = key > currentNode->key ? currentNode->right : currentNode->left;
@@ -178,7 +179,6 @@ void Map<K, V>::insert(const K& key, F&& value){
       currentNode = childNode;
     }
   }
-  size_++;
 }
 
 template <typename K, typename V>
