@@ -65,6 +65,8 @@ class Map {
       destroy(n->right);
       delete n;
     }
+
+  void eraseNode(node* toDelete, node*& connection);
 };
 
 template <typename K, typename V>
@@ -109,7 +111,7 @@ Map<K, V>& Map<K, V>::operator=(Map<K, V>&& other){
 
 template <typename K, typename V>
 V* Map<K, V>::find(const K& k) {
-  auto& thisNode = root;
+  node* thisNode = root;
   while(thisNode != nullptr) {
     if(k > thisNode->key) {
       thisNode = thisNode->right;
@@ -125,7 +127,7 @@ V* Map<K, V>::find(const K& k) {
 
 template <typename K, typename V>
 const V* Map<K, V>::find(const K& k) const {
-  auto& thisNode = root;
+  const node* thisNode = root;
   while(thisNode != nullptr) {
     if(k > thisNode->key) {
       thisNode = thisNode->right;
@@ -189,5 +191,85 @@ V& Map<K, V>::operator[](const K& key){
   return *find(key);
 }
 
+template <typename K, typename V>
+void Map<K, V>::eraseNode(node* toDelete, node*& connection){
+  node* leftChild = toDelete->left;
+  node* rightChild = toDelete->right;
+  if(!leftChild && !rightChild){
+    connection = nullptr; 
+    delete toDelete;
+    return;
+  }
+  if(!leftChild) {
+    connection = toDelete->right;
+    delete toDelete;
+    return;
+  }
+  if(!rightChild){
+    connection = toDelete->left;
+    delete toDelete;
+    return;
+  }
+
+  node* inOrderSuccesor = toDelete->right;
+  node* parentNodeSuccesor = nullptr;
+
+  while(inOrderSuccesor->left != nullptr){
+    parentNodeSuccesor = inOrderSuccesor;
+    inOrderSuccesor = inOrderSuccesor->left;
+  }
+
+  toDelete->value = inOrderSuccesor->value;
+  toDelete->key = inOrderSuccesor->key;
+
+  if(!parentNodeSuccesor){
+    toDelete->right = inOrderSuccesor->right;
+    delete inOrderSuccesor;
+    return;
+  }
+
+  if(inOrderSuccesor->right)
+    parentNodeSuccesor->left = inOrderSuccesor->right;
+  else 
+    parentNodeSuccesor->left = nullptr;
+  delete inOrderSuccesor;
+  return;
+  
+}
+
+
+template <typename K, typename V>
+bool Map<K, V>::erase(const K& key){
+  if(!find(key))
+    return false;
+  node* currentNode = root;
+  node* parentNode = nullptr;
+  while(currentNode->key != key){
+    parentNode = currentNode;
+    if(key > currentNode->key) {
+      currentNode = currentNode->right;
+    }
+    else if(key < currentNode->key) {
+      currentNode = currentNode->left;
+    }
+  }
+
+  if(!parentNode){
+    eraseNode(currentNode, root);
+    size_--;
+    return true;
+  }
+  node*& parentChildConnection = parentNode->left == currentNode ? parentNode->left : parentNode->right;
+  size_--;
+  eraseNode(currentNode, parentChildConnection);
+  return true;
+}
+
+template <typename K, typename V>
+void Map<K, V>::clear(){
+  destroy(root);
+  size_ = 0;
+  root = nullptr;
+}
 
 
